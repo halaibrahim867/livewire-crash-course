@@ -7,13 +7,22 @@ use Livewire\Component;
 
 class BirdForm extends Component
 {
-    public int $bird_count; //should be same in db
+    #[Validate('required|integer')]
+    public int $birdCount;
+    #[Validate('required|string')]
     public string $notes;
 
 
     public function submit()
     {
-        Entry::create($this->pull());
+        $this->validate();
+
+        Entry::create([
+            'bird_count' => $this->birdCount,
+            'notes' => $this->notes,
+        ]);
+
+        $this->reset();
 
     }
     public function render()

@@ -1,8 +1,8 @@
 <div>
     <form wire:submit="submit">
         <div>
-            <label for="bird_count">Bird Count</label>
-            <input wire:model="bird_count" type="number"/>
+            <label for="birdCount">Bird Count</label>
+            <input wire:model="birdCount" type="number"/>
         </div>
         <div>
             <label for="notes">Notes</label>
@@ -11,6 +11,14 @@
         </div>
         <button>Add a New Bird Count </button>
     </form>
+
+    @if($errors->any())
+        <div>
+            @foreach($errors->all() as $error)
+                <div>{{$error}}</div>
+            @endforeach
+        </div>
+    @endif
 
     <div>
         @foreach($entries as $entry)
