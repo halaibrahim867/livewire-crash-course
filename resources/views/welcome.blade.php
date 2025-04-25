@@ -6,6 +6,6 @@
     <title>Livewire Crash Cource</title>
 </head>
 <body>
-    <livewire:counter/>
+    <livewire:bird-form />
 </body>
 </html>
