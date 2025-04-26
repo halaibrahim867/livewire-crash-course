@@ -6,6 +6,13 @@
     <title>Livewire Crash Cource</title>
 </head>
 <body>
-    <livewire:bird-form />
+{{--    <livewire:bird-form />--}}
+
+    <div>
+        Send Event: <livewire:send-event />
+    </div>
+    <div>
+        Receive Event: <livewire:receive-event />
+    </div>
 </body>
 </html>
