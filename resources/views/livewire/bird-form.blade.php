@@ -22,12 +22,20 @@
 
     <div>
         @foreach($entries as $entry)
-            <div>
-                {{$entry->bird_count}}
+            <div wire:key='{{ $entry->id }}' wire:transition>
+                <div>
+                    {{$entry->bird_count}}
+                </div>
+                <div>
+                    {{$entry->notes}}
+                </div>
+
+                <button wire:click='delete({{$entry->id}})'>
+                    Delete
+                </button>
+
             </div>
-            <div>
-                {{$entry->notes}}
-            </div>
+
         @endforeach
     </div>
 
